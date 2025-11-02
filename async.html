@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <div id="dat"></div> 
+        
+        <form action="">
+            <input type="text" placeholder="Enter name" id="nm">
+            <input type="text" placeholder="Password" id="pass">
+            <input type="submit" value="login">
+        </form>
+    <script>
+        //async and await
+        let dv=document.getElementById('dat');
+        let fun =async ()=>{
+            let data = await fetch("https://randomuser.me/api/");
+            data =await data.json()
+            let na=data['results'][0]['name']['first'];
+            dv.innerHTML=na
+        }
+        setTimeout(()=>{
+            console.log("kavy");
+        },50);
+
+        setInterval(() => {
+            console.log("kavya");
+        }, 3000);
+     
+        fun()
+    </script>
+</body>
+</html>
